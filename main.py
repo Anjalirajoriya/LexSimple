@@ -5,7 +5,7 @@ import os
 # Works locally (from .env) AND on Streamlit Cloud (from secrets)
 if "GROQ_API_KEY" in st.secrets:
     os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
-    
+
 import streamlit as st
 import PyPDF2
 from models.summarizer import generate_summary, translate_to_hindi
