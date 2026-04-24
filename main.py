@@ -1,6 +1,11 @@
 from dotenv import load_dotenv
 load_dotenv()
+
 import os
+import streamlit as st
+import PyPDF2
+from models.summarizer import generate_summary, translate_to_hindi
+from models.simplifier import simplify_text, extract_key_points, detect_risks, score_contract, breakdown_clauses
 
 # Works locally (from .env) AND on Streamlit Cloud (from secrets)
 if "GROQ_API_KEY" in st.secrets:
